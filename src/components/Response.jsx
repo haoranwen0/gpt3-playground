@@ -1,29 +1,27 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 
 import "../css/Response.css";
 
-function Response() {
+function Response(props) {
+  const { time, engine, prompt, response, max_tokens, temperature } = props;
+
   const [expand, setExpand] = useState(false);
 
   return (
     <div className="response">
       <div className="response-section row">
         <h2 className="response-label">Time</h2>
-        <p>11:25 PM EST</p>
+        <p>{new Date(time).toString()}</p>
       </div>
       <div className="response-section">
         <h2 className="response-label">Response</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem non
-          ipsam ab. Iusto dolorem itaque vel quas dicta corporis aut quo
-          quibusdam facere, earum iure.
-        </p>
+        <pre>{response.trim()}</pre>
       </div>
       {!expand && (
         <div
-          className="response-section icon row center"
+          className="response-section icon row center expandMore"
           onClick={() => setExpand((prev) => !prev)}
         >
           <ExpandMoreIcon />
@@ -32,27 +30,23 @@ function Response() {
       {expand && (
         <>
           <div className="response-section">
-            <h2 className="response-label">Original Prompt</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem non
-              ipsam ab. Iusto dolorem itaque vel quas dicta corporis aut quo
-              quibusdam facere, earum iure loll.
-            </p>
+            <h2 className="response-label">Prompt</h2>
+            <pre>{prompt}</pre>
           </div>
           <div className="response-section row">
             <h2 className="response-label">Temperature</h2>
-            <p>0.7</p>
+            <p>{temperature}</p>
           </div>
           <div className="response-section row">
             <h2 className="response-label">Max Tokens</h2>
-            <p>250</p>
+            <p>{max_tokens}</p>
           </div>
           <div className="response-section row">
             <h2 className="response-label">Engine</h2>
-            <p>text-davinci-002</p>
+            <p>{engine}</p>
           </div>
           <div
-            className="response-section icon row center"
+            className="response-section icon row center expandLess"
             onClick={() => setExpand((prev) => !prev)}
           >
             <ExpandLessIcon />

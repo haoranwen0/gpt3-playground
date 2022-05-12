@@ -2,17 +2,24 @@
 
 .display {
   flex: 1;
+  overflow: auto;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: var(--lg) var(--xlg);
 }
 
 .display-wrapper {
-  padding: var(--lg) var(--xlg);
   width: 80%;
-  height: 100vh;
 }
 
 .display-heading {
   margin-bottom: var(--lg);
+}
+
+@media only screen and (max-width: 1024px) {
+  .display {
+    padding: var(--lg) var(--sm);
+  }
 }

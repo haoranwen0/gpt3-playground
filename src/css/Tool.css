@@ -1,11 +1,38 @@
 @import url("./_variables.css");
 
 .tool-wrapper {
+  overflow: auto;
+  position: relative;
   width: 400px;
   height: 100%;
   padding: var(--lg);
   background-color: var(--primary-bg-color);
   box-shadow: var(--container-box-shadow);
+  border-radius: 0 var(--sm) var(--sm) 0;
+  z-index: 99;
+}
+
+.tool-toggle {
+  position: absolute;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: var(--sm);
+}
+
+.tool-toggle.close {
+  top: 0;
+  right: 0;
+  border-radius: 0 var(--sm) 0 var(--sm);
+}
+
+.tool-toggle.open {
+  border-radius: 0 var(--sm) var(--sm) 0;
+}
+
+.tool-toggle:hover {
+  color: white;
+  background-color: var(--primary-accent-color);
 }
 
 .tool-section {
@@ -25,10 +52,30 @@
   margin-bottom: var(--sm);
 }
 
+.engine-ref {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--sm);
+}
+
+.engine-ref span {
+  cursor: pointer;
+  color: var(--primary-accent-color);
+  font-style: italic;
+}
+
 .tool-slider-res {
   margin-top: var(--sm);
 }
 
 .tool-slider-res :is(span) {
   float: right;
+}
+
+@media only screen and (max-width: 1024px) {
+  .tool-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
