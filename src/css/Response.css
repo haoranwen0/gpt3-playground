@@ -1,0 +1,35 @@
+@import url("./_variables.css");
+
+.response {
+  background-color: var(--primary-bg-color);
+  box-shadow: var(--container-box-shadow);
+  padding: var(--md);
+  border-radius: var(--sm);
+}
+
+.response-section {
+  margin-bottom: var(--md);
+}
+
+.response-section.icon {
+  cursor: pointer;
+  margin: 0;
+}
+
+.response-section.row {
+  display: flex;
+}
+
+.response-section.center {
+  justify-content: center;
+}
+
+.response-section.row .response-label {
+  margin-right: var(--sm);
+}
+
+.response-label {
+  font-size: 1em;
+  font-style: italic;
+  margin-bottom: var(--xsm);
+}

@@ -1,0 +1,9 @@
+{
+  "httpMethod": "GET",
+  "path": "/openai",
+  "queryStringParameters": {
+    "prompt": "Who's the 44th president of the United States?",
+    "temperature": 0.7,
+    "max_tokens": 250
+  }
+}

@@ -1,0 +1,34 @@
+@import url("./_variables.css");
+
+.tool-wrapper {
+  width: 400px;
+  height: 100%;
+  padding: var(--lg);
+  background-color: var(--primary-bg-color);
+  box-shadow: var(--container-box-shadow);
+}
+
+.tool-section {
+  margin-bottom: var(--lg);
+}
+
+.tool-section.last {
+  margin-top: var(--xlg);
+}
+
+.tool-section.input {
+  display: flex;
+  flex-direction: column;
+}
+
+.tool-section-labels {
+  margin-bottom: var(--sm);
+}
+
+.tool-slider-res {
+  margin-top: var(--sm);
+}
+
+.tool-slider-res :is(span) {
+  float: right;
+}
